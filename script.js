@@ -25,7 +25,7 @@ function createNewList(countryList) {
     .map(function (country) {
       return `<div class="country">
             <img class="image" src=${country.flag}
-alt= country flag
+alt= country flag>
             <h1 class="country-name">${country.name}</h1>
             
             <p>Population: ${country.population}</p>

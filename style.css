@@ -1,6 +1,13 @@
-.countries-container {
+#countries-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+.image {
+  width: 250px;
+}
+.country {
+  width: 25%;
+  /* min-width: 400px; */
 }
