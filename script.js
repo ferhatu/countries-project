@@ -4,7 +4,12 @@ rootElem.innerHTML = `
 <h1>Where in the world?</h1>
 <p id="mode">Dark Mode</p>
 </div>
-<div id="countries-container"></div>
+<div class="search-field">
+<input type="search" id="country-search" placeholder="Search country">
+</div>
+<div id="countries-container">
+
+</div>
 
 `;
 function setup() {
@@ -19,6 +24,17 @@ function setup() {
 function makePageForCountries(countryList) {
   let countries = document.getElementById("countries-container");
   countries.innerHTML = createNewList(countryList);
+  //Search Field
+
+  let searchField = document.querySelector("#country-search");
+  searchField.addEventListener("keyup", function () {
+    console.log(111);
+    let filteredCountries = countryList.filter(
+      (data) => data.name.toLowerCase().includes(searchField.value)
+      //   console.log(searchField.value);
+    );
+    countries.innerHTML = createNewList(filteredCountries);
+  });
 }
 function createNewList(countryList) {
   return countryList
