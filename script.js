@@ -48,7 +48,6 @@ function makePageForCountries(countryList) {
   filterRegion.addEventListener("change", function (event) {
     let regionValue = event.target.value;
     let countriesFilteredByRegion = countryList.filter((country) => {
-      //   console.log(country.region === regionValue);
       return country.region === regionValue;
     });
     countries.innerHTML = createNewList(countriesFilteredByRegion);
@@ -70,20 +69,5 @@ alt= country flag>
     })
     .join("");
 }
-// function filteredRegion(countryList) {
-//   return countryList
-//     .filter(function (event) {
-//         let x = event.target.value;
-//       if (x == )
 
-//       return `
-//      <option value=${country.region}>
-//      ${country.region}
-//      </option>
-
-//      `;
-// })
-
-// .join("");
-// }
 window.onload = setup;
