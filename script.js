@@ -20,12 +20,14 @@ rootElem.innerHTML = `
 </div>
 
 `;
+let allData;
 function setup() {
   fetch("https://restcountries.eu/rest/v2/all")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      allData = data;
       makePageForCountries(data);
     });
 }
@@ -58,7 +60,7 @@ function createNewList(countryList) {
   return countryList
     .map(function (country) {
       return `<div class="country">
-            <img class="image" src=${country.flag}
+            <img class="image" onclick="anonym()" src=${country.flag}
 alt= country flag>
             <h1 class="country-name">${country.name}</h1>
             
@@ -68,6 +70,11 @@ alt= country flag>
             </div>`;
     })
     .join("");
+}
+function anonym() {
+  allData.forEach((data) => {
+    data.callingc;
+  });
 }
 
 window.onload = setup;
