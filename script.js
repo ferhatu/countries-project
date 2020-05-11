@@ -6,7 +6,14 @@ rootElem.innerHTML = `
 </div>
 <div class="search-field">
 <input type="search" id="country-search" placeholder="Search country">
-<select id="filter-region"> </select>
+<select id="filter-region"> 
+<option value=""> All region</option>
+          <option value="Europe"> Europe</option>
+          <option value="Asia"> Asia</option>
+          <option value="Americas">America </option>
+          <option value="Africa"> Africa</option>
+          <option value="Oceania"> Oceania</option>
+</select>
 </div>
 <div id="countries-container">
 
@@ -38,8 +45,16 @@ function makePageForCountries(countryList) {
   });
   // Filter Regions
   let filterRegion = document.querySelector("#filter-region");
-  filterRegion.innerHTML = filteredRegion(countryList);
+  filterRegion.addEventListener("change", function (event) {
+    let regionValue = event.target.value;
+    let countriesFilteredByRegion = countryList.filter((country) => {
+      //   console.log(country.region === regionValue);
+      return country.region === regionValue;
+    });
+    countries.innerHTML = createNewList(countriesFilteredByRegion);
+  });
 }
+
 function createNewList(countryList) {
   return countryList
     .map(function (country) {
@@ -55,17 +70,20 @@ alt= country flag>
     })
     .join("");
 }
-function filteredRegion(countryList) {
-  return countryList
-    .map(function (country) {
-      return `
-     <option value=${country.callingCodes}>
-     ${country.region}
-     </option>
+// function filteredRegion(countryList) {
+//   return countryList
+//     .filter(function (event) {
+//         let x = event.target.value;
+//       if (x == )
 
-     `;
-    })
+//       return `
+//      <option value=${country.region}>
+//      ${country.region}
+//      </option>
 
-    .join("");
-}
+//      `;
+// })
+
+// .join("");
+// }
 window.onload = setup;

@@ -16,6 +16,12 @@
   flex-direction: row;
   justify-content: space-around;
 }
+h1 {
+  text-align: center;
+}
+#mode {
+  text-align: center;
+}
 #country-search {
   border-radius: 8px;
   font-family: "Lucida Sans Unicode", sans-serif;
