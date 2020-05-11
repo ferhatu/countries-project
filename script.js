@@ -6,6 +6,7 @@ rootElem.innerHTML = `
 </div>
 <div class="search-field">
 <input type="search" id="country-search" placeholder="Search country">
+<select id="filter-region"> </select>
 </div>
 <div id="countries-container">
 
@@ -35,6 +36,9 @@ function makePageForCountries(countryList) {
     );
     countries.innerHTML = createNewList(filteredCountries);
   });
+  // Filter Regions
+  let filterRegion = document.querySelector("#filter-region");
+  filterRegion.innerHTML = filteredRegion(countryList);
 }
 function createNewList(countryList) {
   return countryList
@@ -49,6 +53,19 @@ alt= country flag>
             <p>Capital: ${country.capital}</p>
             </div>`;
     })
+    .join("");
+}
+function filteredRegion(countryList) {
+  return countryList
+    .map(function (country) {
+      return `
+     <option value=${country.callingCodes}>
+     ${country.region}
+     </option>
+
+     `;
+    })
+
     .join("");
 }
 window.onload = setup;

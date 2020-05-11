@@ -25,3 +25,12 @@
   width: 250px;
   color: black;
 }
+#filter-region {
+  border-radius: 8px;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 10px;
+  width: 250px;
+  color: black;
+}
