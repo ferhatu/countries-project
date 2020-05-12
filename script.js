@@ -29,6 +29,9 @@ function setup() {
     .then((data) => {
       allData = data;
       makePageForCountries(data);
+    })
+    .catch((error) => {
+      console.log("Error", error);
     });
 }
 function makePageForCountries(countryList) {
@@ -38,7 +41,6 @@ function makePageForCountries(countryList) {
 
   let searchField = document.querySelector("#country-search");
   searchField.addEventListener("keyup", function () {
-    console.log(111);
     let filteredCountries = countryList.filter(
       (data) => data.name.toLowerCase().includes(searchField.value)
       //   console.log(searchField.value);
@@ -60,7 +62,7 @@ function createNewList(countryList) {
   return countryList
     .map(function (country) {
       return `<div class="country">
-            <img class="image" onclick="anonym()" src=${country.flag}
+            <img class="image" value = ${country.callingCodes} onclick="anonym()"src=${country.flag} 
 alt= country flag>
             <h1 class="country-name">${country.name}</h1>
             
@@ -71,10 +73,12 @@ alt= country flag>
     })
     .join("");
 }
-function anonym() {
-  allData.forEach((data) => {
-    data.callingc;
-  });
+function anonym(event) {
+  // alert("onclick Event triggered!");
+  countryValue = event.target.value;
+  let xxx = allData.filter(function (data) {});
+  let countries = document.getElementById("countries-container");
+  countries.innerHTML = createNewList(xxx);
 }
 
 window.onload = setup;
