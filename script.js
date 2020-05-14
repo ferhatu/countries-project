@@ -100,7 +100,7 @@ function showCountryDetails(country) {
 }
 function getCountryDetails(country) {
   return `
-        <img src=${country.flag}  alt=country flag />
+        <img id="detail-flag" src=${country.flag}  alt=country flag />
         <h2>${country.name}</h2>
         <p>
             <strong>Native Name:</strong>
