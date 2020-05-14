@@ -14,16 +14,21 @@
 #header {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.search-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* h1 {
   text-align: center;
 } */
 #mode {
-  text-align: center;
+  margin-top: 35px;
+  align-items: center;
 }
 #country-search {
-  border-radius: 8px;
   font-family: "Lucida Sans Unicode", sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -33,7 +38,6 @@
 }
 #filter-region {
   margin-left: 750px;
-  border-radius: 8px;
   font-family: "Lucida Sans Unicode", sans-serif;
   font-weight: 600;
   font-size: 15px;
