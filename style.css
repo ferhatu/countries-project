@@ -78,3 +78,12 @@ body .mode {
   width: 400px;
   height: 300px;
 }
+#country-details {
+  display: flex;
+}
+#detail-info {
+  margin-left: 20px;
+}
+#detail-img {
+  margin-top: 25px;
+}

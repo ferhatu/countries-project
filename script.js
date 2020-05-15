@@ -100,7 +100,10 @@ function showCountryDetails(country) {
 }
 function getCountryDetails(country) {
   return `
+  <div id="detail-img">      
         <img id="detail-flag" src=${country.flag}  alt=country flag />
+  </div>
+  <div id="detail-info">
         <h2>${country.name}</h2>
         <p>
             <strong>Native Name:</strong>
@@ -134,6 +137,7 @@ function getCountryDetails(country) {
             <strong>Languages:</strong>
             ${country.languages.map((language) => language.name)}
         </p>
+    </div>
     `;
 }
 
